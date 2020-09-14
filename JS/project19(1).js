@@ -1,5 +1,5 @@
-var ind = require('./index');
-import {Index,payGrade, getCadre, calculateTax, getBenefits,     calculateBonus , reimbursementEligibility } from './index.js';
+var ind = require('./project19.js');
+import {Index,payGrade, getCadre, calculateTax, getBenefits,     calculateBonus , reimbursementEligibility } from './project19.js';
 
 function getEmployeeInformation(inputSalary) {
   console.log(inputSalary);
