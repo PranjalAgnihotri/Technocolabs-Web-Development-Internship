@@ -7,19 +7,19 @@ let payGrades = {
 };
 
  Index. getCadre= function () {
-  if (salary >= payGrades.entryLevel.minSalary && salary <= payGrades.entryLevel.maxSalary) {
+  if (Index.salary >= payGrades.entryLevel.minSalary && salary <= payGrades.entryLevel.maxSalary) {
     return 'entryLevel';
-  } else if (salary >= payGrades.midLevel.minSalary && salary <= payGrades.midLevel.maxSalary) {
+  } else if (Index.salary >= payGrades.midLevel.minSalary && salary <= payGrades.midLevel.maxSalary) {
     return 'midLevel';
   } else return 'seniorLevel';
 }
 
 Index. calculateTax=function () {
-  return payGrades[getCadre()].taxMultiplier * salary;
+  return payGrades[Index.getCadre()].taxMultiplier * Index.salary;
 }
 
 Index. getBenefits= function () {
-  return payGrades[getCadre()].benefits.join(', ');
+  return payGrades[Index.getCadre()].benefits.join(', ');
 }
 
  Index. calculateBonus=function () {
@@ -28,7 +28,7 @@ Index. getBenefits= function () {
 Index. reimbursementEligibility=function () {
   let reimbursementCosts = { health: 5000, housing: 8000, wellness: 6000, gym: 12000 };
   let totalBenefitsValue = 0; 
-  let employeeBenefits = payGrades[getCadre()].benefits;
+  let employeeBenefits = payGrades[Index.getCadre()].benefits;
   for (let i = 0; i < employeeBenefits.length; i++) {
     totalBenefitsValue += reimbursementCosts[employeeBenefits[i]];
   }
@@ -36,3 +36,4 @@ Index. reimbursementEligibility=function () {
 }
 module.exports= {Index,payGrades , getCadre , calculateTax, getBenefits, calculateBonus, reimbursementEligibility} ;
 //export index.js as module;
+
